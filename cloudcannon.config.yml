@@ -274,3 +274,6 @@ markdown:
     superscript: false
     heading_ids: false
     attributes: false
+preview:
+  gallery:
+    Image: favicon.svg
