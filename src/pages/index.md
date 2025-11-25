@@ -2,7 +2,7 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Marketing website done with Astro Changed.
+    heading: This is a change to the Headline
     content: >-
       Astroship is a starter template for startups, marketing websites & landing
       pages. Built with Astro.build and TailwindCSS. You can quickly create any
@@ -25,16 +25,16 @@ content_blocks:
       Astro comes batteries included. It takes the best parts of
       state-of-the-art tools and adds its own innovations.
     features:
-      - title: Bring Your Own Framework
-        description: >-
-          Build your site using React, Svelte, Vue, Preact, web components, or
-          just plain ol' HTML + JavaScript.
-        icon: bx:bxs-briefcase
       - title: 100% Static HTML, No JS
         description: >-
           Astro renders your entire page to static HTML, removing all JavaScript
           from your final build by default.
         icon: bx:bxs-window-alt
+      - title: Bring Your Own Framework
+        description: >-
+          Build your site using React, Svelte, Vue, Preact, web components, or
+          just plain ol' HTML + JavaScript.
+        icon: bx:bxs-briefcase
       - title: On-Demand Components
         description: >-
           Need some JS? Astro can automatically hydrate interactive components
@@ -58,17 +58,15 @@ content_blocks:
   - type: logos
     heading: Works with your technologies
     icons:
-      - simple-icons:react
-      - simple-icons:svelte
-      - simple-icons:astro
-      - simple-icons:tailwindcss
       - simple-icons:alpinedotjs
+      - simple-icons:svelte
+      - simple-icons:react
+      - simple-icons:tailwindcss
+      - simple-icons:astro
       - simple-icons:vercel
   - type: cta
-    heading: Build faster websites.
-    description: >-
-      Pull content from anywhere and serve it fast with Astro's next-gen island
-      architecture.
-    buttonText: Get Started
+    heading: Astro is Awesome
+    description: It's easy to create landing pages on CloudCannon
+    buttonText: Check it out
     buttonLink: '#'
 ---
