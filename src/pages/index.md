@@ -2,7 +2,7 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Marketing website done with Astro Changed.
+    heading: Another change!
     content: >-
       Astroship is a starter template for startups, marketing websites & landing
       pages. Built with Astro.build and TailwindCSS. You can quickly create any
@@ -58,17 +58,15 @@ content_blocks:
   - type: logos
     heading: Works with your technologies
     icons:
-      - simple-icons:alpinedotjs
       - simple-icons:svelte
       - simple-icons:react
+      - simple-icons:alpinedotjs
       - simple-icons:tailwindcss
       - simple-icons:astro
       - simple-icons:vercel
   - type: cta
-    heading: Build faster websites.
-    description: >-
-      Pull content from anywhere and serve it fast with Astro's next-gen island
-      architecture.
-    buttonText: Get Started
+    heading: Here is a new CTA
+    description: Making a new one!
+    buttonText: Here is a button
     buttonLink: '#'
 ---
