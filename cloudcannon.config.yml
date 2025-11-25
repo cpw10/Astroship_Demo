@@ -1,0 +1,276 @@
+paths:
+  uploads: public/images
+  static: public
+collections_config:
+  pages:
+    path: src/pages
+    glob:
+      - '!404.md'
+      - '*.astro'
+      - '*.md'
+    icon: wysiwyg
+    url: /[full_slug]/
+    disable_url: false
+    _enabled_editors:
+      - visual
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  blog:
+    path: src/content/blog
+    icon: newspaper
+    disable_url: false
+    preview:
+      subtext:
+        - key: author
+      metadata:
+        - text:
+            - key: publishDate
+      gallery:
+        image:
+          - key: image.src
+        fit: cover
+    sort_options:
+      - key: title
+        order: ascending
+      - key: publishDate
+        order: ascending
+    _enabled_editors:
+      - visual
+    _inputs:
+      $.draft:
+        type: switch
+        cascade: true
+      $.image.alt:
+        type: textarea
+        options:
+          required: true
+        cascade: true
+      $.publishDate:
+        type: datetime
+        cascade: true
+      $.tags:
+        type: multiselect
+        options:
+          allow_create: true
+          allow_empty: true
+        cascade: true
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+  team:
+    path: src/content/team
+    icon: emoji_people
+    disable_url: true
+    preview:
+      subtext:
+        - key: title
+      gallery:
+        image:
+          - key: avatar.src
+        fit: padded
+    sort_options:
+      - key: name
+        order: ascending
+      - key: title
+        order: ascending
+    _enabled_editors:
+      - data
+    _inputs:
+      publishDate:
+        type: datetime
+        cascade: true
+      avatar:
+        type: object
+        options:
+          preview:
+            icon: emoji_people
+            image:
+              - key: src
+        cascade: true
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: true
+_inputs:
+  type:
+    hidden: true
+    cascade: true
+  src:
+    type: image
+    cascade: true
+  $.layout:
+    hidden: true
+    cascade: true
+  plans:
+    type: array
+    options:
+      structures: _structures.plans
+    cascade: true
+_structures:
+  plans:
+    style: select
+    values:
+      - value:
+          name:
+          price:
+          popular: false
+          features: []
+          button:
+            text: Get Started
+            link: /
+        _inputs:
+          popular:
+            type: switch
+            cascade: true
+          features:
+            type: array
+            cascade: true
+          features[*]:
+            type: text
+            cascade: true
+          button:
+            type: object
+            options:
+              preview:
+                icon: smart_button
+            cascade: true
+        preview:
+          icon: credit_card
+  content_blocks:
+    style: select
+    values:
+      - label: Hero
+        value:
+          type: hero
+          heading:
+          content:
+          image: /images/hero.png
+          alt:
+          buttons: []
+        _inputs:
+          content:
+            type: textarea
+            cascade: true
+          buttons:
+            type: array
+            options:
+              structures: _structures.button
+            cascade: true
+          alt:
+            comment: Add an alt tag for the hero image.
+            cascade: true
+        _structures:
+          button:
+            style: select
+            values:
+              - value:
+                  text:
+                  link:
+                  icon:
+                  style: primary
+                _inputs:
+                  icon:
+                    type: select
+                    options:
+                      allow_empty: true
+                      values: data.boxIcons
+                    cascade: true
+                  style:
+                    type: select
+                    options:
+                      allow_empty: true
+                      values:
+                        - name: Primary
+                          id: primary
+                        - name: Outline
+                          id: outline
+                        - name: Inverted
+                          id: inverted
+                        - name: Muted
+                          id: muted
+                    cascade: true
+                preview:
+                  icon: smart_button
+        preview:
+          icon: home
+          image:
+            - key: image
+      - label: Features
+        value:
+          type: features
+          heading:
+          description:
+          features: []
+        _inputs:
+          features:
+            type: array
+            options:
+              structures: _structures.feature
+            cascade: true
+        preview:
+          icon: apps
+        _structures:
+          feature:
+            style: select
+            values:
+              - value:
+                  title:
+                  description:
+                  icon:
+                _inputs:
+                  icon:
+                    type: select
+                    options:
+                      allow_empty: true
+                      values: data.boxIcons
+                    cascade: true
+                preview:
+                  icon: bucket_check
+      - label: Logos
+        value:
+          type: logos
+          heading:
+          icons: []
+        _inputs:
+          icons:
+            type: multiselect
+            options:
+              allow_empty: true
+              values: data.simpleIcons
+            cascade: true
+        preview:
+          icon: grid_view
+      - label: CTA
+        preview:
+          icon: call_to_action
+        value:
+          type: cta
+          heading:
+          description:
+          buttonText:
+          buttonLink: '#'
+data_config:
+  boxIcons:
+    path: data/box-icons.json
+  simpleIcons:
+    path: data/simple-icons.json
+timezone: Pacific/Auckland
+markdown:
+  engine: commonmark
+  options:
+    xhtml: false
+    breaks: false
+    linkify: false
+    typographer: false
+    spaced_lists: false
+    sentence_per_line: false
+    gfm: true
+    code_block_fences: '```'
+    escape_snippets_in_code_blocks: false
+    treat_indentation_as_code: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    attributes: false

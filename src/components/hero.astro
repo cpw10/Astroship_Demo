@@ -1,0 +1,66 @@
+---
+import { Picture } from "astro:assets";
+import Link from "@/components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+
+const { heading, content, color, image, alt, buttons = [] } = Astro.props;
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div class="py-6 md:order-1 hidden md:block">
+    <Picture
+      src={image}
+      alt={alt}
+      data-editable="image"
+      data-prop-src="image"
+      data-prop-alt="alt"
+      width={520}
+      height={424}
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+  <div>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter"
+      data-editable="text"
+      data-prop="heading">
+      {heading}
+    </h1>
+    <p
+      class="text-lg mt-4 text-slate-600 max-w-xl"
+      set:html={content}
+      data-editable="text"
+      data-prop="content"
+    />
+    <div
+      class="mt-6 flex flex-col sm:flex-row gap-3"
+      data-editable="array"
+      data-direction="row"
+      data-prop="buttons">
+      {
+        buttons.map((button) => {
+          const linkStyle = button.style || "primary";
+          const iconClass =
+            linkStyle === "primary"
+              ? "text-white w-5 h-5"
+              : "text-black w-4 h-4";
+          return (
+            <editable-array-item>
+              <Link
+                href={button.link}
+                style={linkStyle}
+                class="flex gap-1 items-center justify-center">
+                {button.icon && <Icon class={iconClass} name={button.icon} />}
+                <editable-text data-prop="text">{button.text}</editable-text>
+              </Link>
+            </editable-array-item>
+          );
+        })
+      }
+    </div>
+  </div>
+</main>
