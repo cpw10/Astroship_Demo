@@ -59,11 +59,11 @@ content_blocks:
     heading: Works with your technologies
     icons:
       - simple-icons:svelte
-      - simple-icons:react
       - simple-icons:alpinedotjs
       - simple-icons:tailwindcss
       - simple-icons:astro
       - simple-icons:vercel
+      - simple-icons:react
   - type: cta
     heading: Here is a new CTA
     description: Making a new one!
