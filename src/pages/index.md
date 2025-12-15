@@ -2,9 +2,9 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Click on the page!
-    content: Write
-    image: /images/frontend-master.jpg
+    heading: Astroship Template
+    content: The Astroship template is an awesome template for marketing sites
+    image: /images/hero.png
     alt: Astronaut in the air
     buttons:
       - text: GitHub Repo
@@ -62,8 +62,8 @@ content_blocks:
       - simple-icons:vercel
       - simple-icons:react
   - type: cta
-    heading: Join the MC Club
-    description: It's so fun!
+    heading: What a great CTA
+    description: Customers will want to click this
     buttonText: This is a button!
     buttonLink: '#'
 ---
