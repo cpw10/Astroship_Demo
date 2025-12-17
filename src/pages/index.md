@@ -2,9 +2,9 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Astroship Template
+    heading: Edit live!
     content: The Astroship template is an awesome template for marketing sites
-    image: /images/hero.png
+    image: /images/frontend-master.jpg
     alt: Astronaut in the air
     buttons:
       - text: GitHub Repo
@@ -17,7 +17,7 @@ content_blocks:
         icon: bx:bxs-cloud-download
         style: primary
   - type: features
-    heading: Everything you need to start a website
+    heading: Making a change!
     description: >-
       Astro comes batteries included. It takes the best parts of
       state-of-the-art tools and adds its own innovations.
@@ -55,12 +55,12 @@ content_blocks:
   - type: logos
     heading: Works with your technologies
     icons:
-      - simple-icons:svelte
       - simple-icons:tailwindcss
       - simple-icons:alpinedotjs
+      - simple-icons:svelte
       - simple-icons:astro
-      - simple-icons:vercel
       - simple-icons:react
+      - simple-icons:vercel
   - type: cta
     heading: What a great CTA
     description: Customers will want to click this
