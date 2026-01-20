@@ -2,9 +2,9 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Edit live!
+    heading: AstroShip Demo
     content: The Astroship template is an awesome template for marketing sites
-    image: /images/frontend-master.jpg
+    image: /images/kitchensink.jpg
     alt: Astronaut in the air
     buttons:
       - text: GitHub Repo
