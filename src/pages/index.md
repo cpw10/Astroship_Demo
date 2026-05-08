@@ -2,7 +2,7 @@
 layout: ../layouts/IndexLayout.astro
 content_blocks:
   - type: hero
-    heading: Edit this!
+    heading: Come in an edit!
     content: The Astroship template is an awesome template for marketing sites
     image: /images/kitchensink.jpg
     alt: Astronaut in the air
